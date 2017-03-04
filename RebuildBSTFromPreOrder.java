@@ -47,6 +47,9 @@ public class RebuildBSTFromPreOrder {
 
         Integer root = preOrderSequence.get(rootIdx);
         if(root < lowerbound || root > upperbound) {
+            System.out.println("root: " + root);
+            System.out.println("lowerbound: " + lowerbound);
+            System.out.println("upperbound: " + upperbound);
             return null;
         }
         ++rootIdx;
