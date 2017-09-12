@@ -22,9 +22,11 @@ public class PatternContainedInGrid {
 		}
 
 		public boolean equals(Object o) {
+			//check if the object reference matches
 			if(this == o) {
 				return true;
 			}
+			//check if both the class matches
 			if(o==null || getClass() != o.getClass()) {
 				return false;
 			}

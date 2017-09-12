@@ -34,3 +34,40 @@ public class DeleteDuplicates {
 		return writeIndex;
 	}
 }
+
+https://jsonmock.hackerrank.com/api/movies/search/?Title=
+
+
+    static int getNumberOfMovies(String substr) {
+        String baseurl = "https://jsonmock.hackerrank.com/api/movies/search/?Title=";
+        String finalurl = baseurl + substr;
+        int total = 0;
+        try {
+            URL geturlObj = new URL(finalurl);
+            HttpURLConnection con = (HttpURLConnection) geturlObj.openConnection();
+            con.setRequestMethod("GET");
+
+            int resCode = con.getResponseCode();
+            BufferedReader bufRead = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String interResponse;
+            StringBuffer finalResponse = new StringBuffer();
+            while((interResponse = bufRead.readLine())!=null) {
+                finalResponse.append(interResponse);
+            }
+            bufRead.close();
+            String jsonString = finalResponse.toString();
+            JSONParser parser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) parser.parse(jsonString);            
+            System.out.println((String)jsonObject.get("total"));
+            String totalStr = (String)jsonObject.get("total");
+            total = Integer.parseInt(totalStr);
+        }
+        catch(Exception e) {
+            
+        }
+
+    return total;
+    }
+
+
+    

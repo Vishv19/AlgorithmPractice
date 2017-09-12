@@ -25,10 +25,12 @@ public class GeneratePowerSet {
 
 		// System.out.println("sequenceOrder: " + sequenceOrder);
 		sequenceAsOfNow.add(inputSequence.get(sequenceOrder));
-		// System.out.println("sequenceAsOfNow Before: " + sequenceAsOfNow);
+		System.out.println("sequenceAsOfNow Before: " + sequenceAsOfNow);
+		System.out.println("sequenceOrder Before: " + sequenceOrder);
 		directPowerSet(inputSequence, sequenceOrder+1, sequenceAsOfNow, powerSet);
 		sequenceAsOfNow.remove(sequenceAsOfNow.size()-1);
-		// System.out.println("sequenceAsOfNow After: " + sequenceAsOfNow);
+		System.out.println("sequenceAsOfNow After: " + sequenceAsOfNow);
+		System.out.println("sequenceOrder After: " + sequenceOrder);
 		directPowerSet(inputSequence, sequenceOrder+1, sequenceAsOfNow, powerSet);
 	}
 }
